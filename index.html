@@ -5,812 +5,877 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ೨೦೨೬ | RLJIT</title>
+<title>ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ | RLJIT</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
+* {
+    box-sizing: border-box;
+}
 
-html{scroll-behavior:smooth}
-
-body{
- margin:0;
- font-family:'Noto Sans Kannada',sans-serif;
- background:linear-gradient(135deg,#190016,#380018,#16051f);
- color:white;
- overflow-x:hidden;
+body {
+    margin: 0;
+    font-family: "Noto Sans Kannada", sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #180018, #320020, #120028);
+    overflow-x: hidden;
 }
 
 /* ANIMATED BACKGROUND */
 
-#animationBackground{
- position:fixed;
- inset:0;
- overflow:hidden;
- pointer-events:none;
- z-index:0;
+.background-animation {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.floating-heart{
- position:absolute;
- bottom:-100px;
- opacity:0;
- animation:heartFloat linear infinite;
- filter:drop-shadow(0 0 8px #ffcc00);
+.heart {
+    position: absolute;
+    bottom: -50px;
+    color: #ffcc00;
+    animation: floatUp linear infinite;
+    opacity: 0.65;
+    text-shadow: 0 0 15px #ffcc00;
 }
 
-@keyframes heartFloat{
- 0%{transform:translateY(0) rotate(0);opacity:0}
- 10%{opacity:.7}
- 50%{transform:translateY(-55vh) rotate(180deg);opacity:.6}
- 100%{transform:translateY(-115vh) rotate(360deg);opacity:0}
+.heart.red {
+    color: #ff1744;
+    text-shadow: 0 0 15px #ff1744;
 }
 
-body::before{
- content:"";
- position:fixed;
- width:500px;
- height:500px;
- background:radial-gradient(circle,#ffcc0030,transparent 70%);
- top:-150px;
- left:-150px;
- animation:glowMove 12s infinite alternate;
- pointer-events:none;
- z-index:0;
-}
-
-body::after{
- content:"";
- position:fixed;
- width:500px;
- height:500px;
- background:radial-gradient(circle,#ff002530,transparent 70%);
- bottom:-200px;
- right:-150px;
- animation:glowMove 15s infinite alternate-reverse;
- pointer-events:none;
- z-index:0;
-}
-
-@keyframes glowMove{
- from{transform:translate(0,0)}
- to{transform:translate(200px,200px)}
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 /* HEADER */
 
-header{
- position:relative;
- z-index:1;
- text-align:center;
- padding:40px 15px;
- background:linear-gradient(135deg,#a00020dd,#380018dd);
- border-bottom:3px solid #ffd700;
- box-shadow:0 0 30px #ffcc0030;
+header {
+    position: relative;
+    z-index: 1;
+    padding: 25px 15px;
+    text-align: center;
+    border-bottom: 2px solid gold;
+    background: rgba(20, 0, 30, 0.75);
 }
 
-header h1{
- font-size:clamp(25px,5vw,48px);
- line-height:1.8;
- color:#ffd700;
- animation:titleGlow 3s infinite alternate;
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-header p{font-size:17px}
-
-@keyframes titleGlow{
- from{text-shadow:0 0 5px #ffcc00}
- to{text-shadow:0 0 25px #ffcc00,0 0 40px #ff6600}
+.logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
 }
 
-.container{
- position:relative;
- z-index:1;
- max-width:1050px;
- margin:auto;
- padding:20px;
+.college-title {
+    flex: 1;
+    text-align: center;
 }
 
-.intro{
- text-align:center;
- line-height:2;
- padding:20px;
+.college-title h1 {
+    color: #ffd700;
+    font-size: clamp(20px, 4vw, 42px);
+    font-weight: 800;
+    margin: 5px 0;
+    text-shadow: 0 0 15px #ff9800;
 }
 
-.intro h2{color:#ffd700}
-
-.section{
- background:#ffffff12;
- backdrop-filter:blur(8px);
- border:1px solid #ffffff25;
- border-radius:20px;
- padding:25px;
- margin:25px 0;
- box-shadow:0 10px 35px #00000025;
+.college-title h2 {
+    font-size: clamp(14px, 2vw, 23px);
+    color: white;
+    margin: 5px 0;
 }
 
-.section h2{
- text-align:center;
- color:#ffd700;
- line-height:1.8;
+.college-title p {
+    color: #ffcc00;
+    margin: 5px 0;
+}
+
+/* WELCOME */
+
+.welcome {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.welcome h1 {
+    color: #ffd700;
+    font-size: clamp(24px, 5vw, 48px);
+    animation: glow 2s infinite alternate;
+}
+
+.welcome p {
+    font-size: 18px;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px red;
+    }
+    to {
+        text-shadow: 0 0 25px gold, 0 0 40px red;
+    }
 }
 
 /* FORM */
 
-label{
- display:block;
- margin:18px 0 8px;
- font-weight:700;
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: auto;
+    padding: 20px;
 }
 
-input,select{
- width:100%;
- padding:14px;
- border-radius:10px;
- border:2px solid #ffd700;
- background:#fff;
- color:#222;
- font-family:inherit;
- font-size:16px;
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 25px rgba(255, 0, 70, 0.15);
 }
 
-select option{
- background:white;
- color:#222;
+.card h2 {
+    text-align: center;
+    color: #ffd700;
+    margin-top: 0;
 }
 
-input[type=file]{
- background:#fff;
- color:#222;
+label {
+    display: block;
+    margin: 16px 0 7px;
+    color: #ffe082;
+    font-weight: 600;
 }
 
-button{
- width:100%;
- padding:15px;
- margin-top:25px;
- border:none;
- border-radius:12px;
- background:linear-gradient(90deg,#ffd700,#ff9f00);
- color:#510015;
- font-family:inherit;
- font-size:17px;
- font-weight:800;
- cursor:pointer;
- transition:transform .3s,box-shadow .3s;
+input, select {
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    border: 2px solid #ffcc00;
+    background: #fff;
+    color: #222;
+    font-family: inherit;
+    font-size: 15px;
 }
 
-button:hover{
- transform:translateY(-3px);
- box-shadow:0 0 25px #ffd70070;
+input:focus, select:focus {
+    outline: 3px solid rgba(255, 215, 0, 0.3);
 }
 
-.preview{
- text-align:center;
- margin-top:20px;
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
-.preview img{
- width:120px;
- height:120px;
- object-fit:cover;
- border-radius:50%;
- border:4px solid #ffd700;
- box-shadow:0 0 20px #ffd70050;
+.generate-btn {
+    color: #300000;
+    background: linear-gradient(90deg, #ffcc00, #ff9800);
 }
 
-/* POSTER */
-
-#posterSection{
- display:none;
- animation:posterAppear 1s ease;
+.generate-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px gold;
 }
 
-@keyframes posterAppear{
- from{opacity:0;transform:translateY(40px)}
- to{opacity:1;transform:translateY(0)}
+.download-btn {
+    background: linear-gradient(90deg, #ff1744, #ff5722);
+    color: white;
 }
 
-.posterCanvas{
- width:100%;
- max-width:750px;
- height:auto;
- display:block;
- margin:auto;
- border-radius:12px;
- background:white;
- box-shadow:0 0 35px #ffd70040;
+.preview-photo {
+    display: block;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid gold;
+    margin: 20px auto;
+    display: none;
+}
+
+/* GENERATED POSTER */
+
+#generatedSection {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+.poster-wrap {
+    max-width: 650px;
+    margin: auto;
+    padding: 10px;
+}
+
+#posterCanvas {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 0 30px gold;
 }
 
 /* VOICE */
 
-.voice-section{
- text-align:center;
- line-height:2;
+.voice-section {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid gold;
+    border-radius: 20px;
 }
 
-audio{
- width:100%;
- max-width:650px;
- margin-top:15px;
+.voice-section h2 {
+    color: #ffd700;
 }
 
-/* ORIGINAL POSTER */
+audio {
+    width: 100%;
+    margin-top: 20px;
+}
 
-.original-poster{
- width:100%;
- max-width:750px;
- display:block;
- margin:20px auto;
- border-radius:15px;
- border:3px solid #ffd700;
- box-shadow:0 0 30px #ffcc0030;
+/* ORIGINAL POSTER AT BOTTOM */
+
+.original-section {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.original-section h2 {
+    color: gold;
+}
+
+.original-section img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 0 25px gold;
 }
 
 /* FOOTER */
 
-footer{
- position:relative;
- z-index:1;
- text-align:center;
- padding:35px 15px;
- line-height:2;
- color:#ddd;
- border-top:2px solid #ffd70050;
+footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 30px 10px;
+    color: #ffd700;
 }
 
-@media(prefers-reduced-motion:reduce){
- .floating-heart{animation:none;display:none}
- header h1{animation:none}
-}
+/* MOBILE */
 
-@media(max-width:600px){
- .container{padding:12px}
- .section{padding:18px}
- header{padding:25px 12px}
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .container {
+        padding: 12px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div id="animationBackground"></div>
+<!-- BACKGROUND ANIMATION -->
+
+<div class="background-animation" id="background"></div>
+
+<!-- COLLEGE HEADER -->
 
 <header>
- <p>ಆರ್. ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ</p>
+    <div class="header-content">
 
- <h1>
- ❤️ ೭೧ನೇ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ❤️<br>
- ಶುಭಾಶಯಗಳು 💛
- </h1>
+        <img src="silver-jubilee.png"
+             class="logo"
+             alt="Silver Jubilee Logo">
 
- <p>ಕನ್ನಡ ಹಬ್ಬ · ೨೦೨೬</p>
+        <div class="college-title">
+            <h1>ಆರ್. ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ</h1>
+            <h2>R. L. JALAPPA INSTITUTE OF TECHNOLOGY</h2>
+            <p>ದೊಡ್ಡಬಳ್ಳಾಪುರ | ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ</p>
+            <p>💛❤️ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ೨೦೨೬ ❤️💛</p>
+        </div>
+
+        <img src="college-logo.png"
+             class="logo"
+             alt="College Logo">
+
+    </div>
 </header>
 
-<div class="container">
+<!-- WELCOME -->
 
-<section class="intro">
- <h2>❤️ ನಮ್ಮ ಕನ್ನಡ · ನಮ್ಮ ಹೆಮ್ಮೆ 💛</h2>
-
- <p>
- ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಈ ಶುಭ ಸಂದರ್ಭದಲ್ಲಿ<br>
- ನಿಮ್ಮದೇ ಆದ ಸುಂದರ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಪೋಸ್ಟರ್ ರಚಿಸಿಕೊಳ್ಳಿ.
- </p>
+<section class="welcome">
+    <h1>❤️ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ಶುಭಾಶಯಗಳು 💛</h1>
+    <p>ನಮ್ಮ ಕನ್ನಡ • ನಮ್ಮ ಹೆಮ್ಮೆ • ನಮ್ಮ ಸಂಸ್ಕೃತಿ</p>
+    <p>🎉 ಕನ್ನಡ ನಾಡಿನ ಹಬ್ಬವನ್ನು ಸಂಭ್ರಮದಿಂದ ಆಚರಿಸೋಣ 🎉</p>
 </section>
 
 <!-- FORM -->
 
-<section class="section">
+<div class="container">
 
-<h2>✨ ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಪೋಸ್ಟರ್ ರಚಿಸಿ ✨</h2>
+    <div class="card">
 
-<form id="form">
+        <h2>🎊 ನಿಮ್ಮ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ಪೋಸ್ಟರ್ ರಚಿಸಿ 🎊</h2>
 
-<label>ನಿಮ್ಮ ಪಾತ್ರ ಆಯ್ಕೆಮಾಡಿ</label>
+        <form id="posterForm">
 
-<select id="role" required>
-<option value="student">ವಿದ್ಯಾರ್ಥಿ</option>
-<option value="teacher">ಅಧ್ಯಾಪಕರು</option>
-</select>
+            <label>ನೀವು ವಿದ್ಯಾರ್ಥಿಯೇ ಅಥವಾ ಶಿಕ್ಷಕರೇ?</label>
 
-<label>ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು</label>
+            <select id="personType" required>
+                <option value="">ಆಯ್ಕೆಮಾಡಿ</option>
+                <option value="student">ವಿದ್ಯಾರ್ಥಿ</option>
+                <option value="teacher">ಶಿಕ್ಷಕರು</option>
+            </select>
 
-<input id="name" type="text"
-placeholder="ನಿಮ್ಮ ಹೆಸರು ಬರೆಯಿರಿ"
-required maxlength="100">
+            <label>ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು</label>
 
-<label>ನಿಮ್ಮ ವಿಭಾಗ ಆಯ್ಕೆಮಾಡಿ</label>
+            <input
+                type="text"
+                id="personName"
+                placeholder="ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ"
+                required
+            >
 
-<select id="branch" required>
-<option value="">ವಿಭಾಗ ಆಯ್ಕೆಮಾಡಿ</option>
-<option>ಕಂಪ್ಯೂಟರ್ ಸೈನ್ಸ್ (CSE)</option>
-<option>ಮಾಹಿತಿ ವಿಜ್ಞಾನ (ISE)</option>
-<option>ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್ (ECE)</option>
-<option>ಎಲೆಕ್ಟ್ರಿಕಲ್ (EEE)</option>
-<option>ಮೆಕ್ಯಾನಿಕಲ್ (ME)</option>
-<option>ಸಿವಿಲ್ (CE)</option>
-<option>ಕೃತಕ ಬುದ್ಧಿಮತ್ತೆ (AI & ML)</option>
-<option>ಸಾಮಾನ್ಯ</option>
-</select>
+            <label>ನಿಮ್ಮ ವಿಭಾಗ / ಶಾಖೆ</label>
 
-<div id="semBox">
-<label>ನಿಮ್ಮ ಸೆಮಿಸ್ಟರ್ ಆಯ್ಕೆಮಾಡಿ</label>
+            <select id="branch" required>
+                <option value="">ವಿಭಾಗ ಆಯ್ಕೆಮಾಡಿ</option>
+                <option value="ಕಂಪ್ಯೂಟರ್ ಸೈನ್ಸ್ (CSE)">ಕಂಪ್ಯೂಟರ್ ಸೈನ್ಸ್ (CSE)</option>
+                <option value="ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್ (ECE)">ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್ (ECE)</option>
+                <option value="ಮೆಕ್ಯಾನಿಕಲ್ (ME)">ಮೆಕ್ಯಾನಿಕಲ್ (ME)</option>
+                <option value="ಸಿವಿಲ್ (CE)">ಸಿವಿಲ್ (CE)</option>
+                <option value="ಎಲೆಕ್ಟ್ರಿಕಲ್ (EEE)">ಎಲೆಕ್ಟ್ರಿಕಲ್ (EEE)</option>
+                <option value="ಮಾಹಿತಿ ವಿಜ್ಞಾನ (ISE)">ಮಾಹಿತಿ ವಿಜ್ಞಾನ (ISE)</option>
+                <option value="ಶಿಕ್ಷಕ ವೃಂದ">ಶಿಕ್ಷಕ ವೃಂದ</option>
+                <option value="ಇತರೆ">ಇತರೆ</option>
+            </select>
 
-<select id="sem">
-<option value="">ಸೆಮಿಸ್ಟರ್ ಆಯ್ಕೆಮಾಡಿ</option>
-<option>೧ನೇ ಸೆಮಿಸ್ಟರ್</option>
-<option>೨ನೇ ಸೆಮಿಸ್ಟರ್</option>
-<option>೩ನೇ ಸೆಮಿಸ್ಟರ್</option>
-<option>೪ನೇ ಸೆಮಿಸ್ಟರ್</option>
-<option>೫ನೇ ಸೆಮಿಸ್ಟರ್</option>
-<option>೬ನೇ ಸೆಮಿಸ್ಟರ್</option>
-<option>೭ನೇ ಸೆಮಿಸ್ಟರ್</option>
-<option>೮ನೇ ಸೆಮಿಸ್ಟರ್</option>
-</select>
-</div>
+            <label>ನಿಮ್ಮ ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ (ಕಡ್ಡಾಯ)</label>
 
-<label>ನಿಮ್ಮ ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ (ಕಡ್ಡಾಯ)</label>
+            <input
+                type="file"
+                id="photoInput"
+                accept="image/*"
+                required
+            >
 
-<input type="file" id="photo"
-accept="image/*" required>
+            <img id="photoPreview" class="preview-photo" alt="Photo Preview">
 
-<div class="preview" id="preview" hidden>
-<img id="previewPhoto" alt="ನಿಮ್ಮ ಫೋಟೋ">
-<p>ಫೋಟೋ ಆಯ್ಕೆಯಾಗಿದೆ ❤️💛</p>
-</div>
+            <button type="submit" class="generate-btn">
+                🎉 ನನ್ನ ಪೋಸ್ಟರ್ ರಚಿಸಿ 🎉
+            </button>
 
-<button type="submit">
-🎉 ನನ್ನ ಪೋಸ್ಟರ್ ತಯಾರಿಸಿ 🎉
-</button>
+        </form>
 
-</form>
-</section>
-
-<!-- GENERATED POSTER -->
-
-<section class="section" id="posterSection">
-
-<h2>❤️ ನಿಮ್ಮ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಪೋಸ್ಟರ್ ❤️</h2>
-
-<canvas id="posterCanvas"
-class="posterCanvas"
-width="1080" height="1500">
-</canvas>
-
-<button id="download">
-⬇ ನನ್ನ ಪೋಸ್ಟರ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ
-</button>
-
-</section>
-
-<!-- VOICE MESSAGE -->
-
-<section class="section voice-section">
-
-<h2>🎵 ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಧ್ವನಿ ಸಂದೇಶ 🎵</h2>
-
-<p>
-ನಮ್ಮ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ವಿಶೇಷ ಧ್ವನಿ ಸಂದೇಶವನ್ನು ಆಲಿಸಿ ❤️💛
-</p>
-
-<audio controls preload="metadata">
-<source src="voice.mp3" type="audio/mpeg">
-</audio>
-
-</section>
-
-<!-- ORIGINAL POSTER AFTER VOICE -->
-
-<section class="section" id="originalPoster">
-
-<h2>🎉 ನಮ್ಮ ಕಾಲೇಜಿನ ಮೂಲ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಪೋಸ್ಟರ್ 🎉</h2>
-
-<p style="text-align:center;line-height:2">
-ಆರ್. ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯದ<br>
-ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಅಧಿಕೃತ ಪೋಸ್ಟರ್ ❤️💛
-</p>
-
-<img src="original-poster.jpg"
-alt="ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ೨೦೨೬ ಮೂಲ ಪೋಸ್ಟರ್"
-class="original-poster">
-
-</section>
+    </div>
 
 </div>
+
+<!-- GENERATED POSTER - ONLY AFTER BUTTON -->
+
+<section id="generatedSection">
+
+    <div class="poster-wrap">
+
+        <h2 style="text-align:center;color:gold;">
+            🎊 ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ಪೋಸ್ಟರ್ 🎊
+        </h2>
+
+        <canvas id="posterCanvas" width="1080" height="1440"></canvas>
+
+        <button class="download-btn" id="downloadBtn">
+            📥 ಪೋಸ್ಟರ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ
+        </button>
+
+    </div>
+
+</section>
+
+<!-- VOICE MESSAGE BELOW GENERATED POSTER -->
+
+<section class="voice-section">
+
+    <h2>🎵 ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಧ್ವನಿ ಸಂದೇಶ 🎵</h2>
+
+    <p>
+        ನಮ್ಮ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ವಿಶೇಷ ಧ್ವನಿ ಸಂದೇಶವನ್ನು ಆಲಿಸಿ ❤️💛
+    </p>
+
+    <audio controls>
+        <source src="voice.mp3" type="audio/mpeg">
+        ನಿಮ್ಮ ಬ್ರೌಸರ್ ಆಡಿಯೋವನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.
+    </audio>
+
+</section>
+
+<!-- ORIGINAL POSTER AT VERY BOTTOM -->
+
+<section class="original-section">
+
+    <h2>❤️ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಮೂಲ ಆಹ್ವಾನ ಪತ್ರಿಕೆ ❤️</h2>
+
+    <img src="poster.png"
+         alt="Kannada Rajyotsava Original Poster">
+
+</section>
 
 <footer>
-❤️ ಕನ್ನಡವೇ ನಮ್ಮ ಉಸಿರು ❤️<br>
-💛 ಕನ್ನಡವೇ ನಮ್ಮ ಹೆಮ್ಮೆ 💛<br>
-ಆರ್. ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ · ದೊಡ್ಡಬಳ್ಳಾಪುರ
+    ❤️ ನಮ್ಮ ಕನ್ನಡ • ನಮ್ಮ ಹೆಮ್ಮೆ • ನಮ್ಮ ಹಬ್ಬ ❤️
+    <br><br>
+    ಆರ್. ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ
 </footer>
 
 <script>
 
-/* ANIMATED HEARTS */
+/* BACKGROUND HEARTS */
 
-const bg=document.getElementById("animationBackground");
+const background = document.getElementById("background");
 
-const hearts=["❤️","💛","💖","💛","❤️"];
+for (let i = 0; i < 35; i++) {
 
-for(let i=0;i<35;i++){
+    const heart = document.createElement("div");
 
- const heart=document.createElement("span");
+    heart.className = "heart " + (i % 2 === 0 ? "red" : "");
 
- heart.className="floating-heart";
- heart.textContent=hearts[i%hearts.length];
+    heart.innerHTML = i % 2 === 0 ? "❤️" : "💛";
 
- heart.style.left=Math.random()*100+"%";
- heart.style.animationDuration=(8+Math.random()*15)+"s";
- heart.style.animationDelay=(-Math.random()*20)+"s";
- heart.style.fontSize=(15+Math.random()*30)+"px";
+    heart.style.left = Math.random() * 100 + "%";
 
- bg.appendChild(heart);
+    heart.style.animationDuration =
+        (8 + Math.random() * 12) + "s";
+
+    heart.style.animationDelay =
+        Math.random() * 10 + "s";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+    background.appendChild(heart);
 }
 
-/* ROLE */
+/* PHOTO PREVIEW */
 
-const role=document.getElementById("role");
-const sem=document.getElementById("sem");
-const semBox=document.getElementById("semBox");
+const photoInput = document.getElementById("photoInput");
+const photoPreview = document.getElementById("photoPreview");
 
-role.addEventListener("change",()=>{
+let uploadedPhoto = null;
 
- const teacher=role.value==="teacher";
+photoInput.addEventListener("change", function() {
 
- semBox.style.display=teacher?"none":"block";
- sem.required=!teacher;
+    const file = this.files[0];
+
+    if (!file) {
+        uploadedPhoto = null;
+        photoPreview.style.display = "none";
+        return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+        alert("ದಯವಿಟ್ಟು ಸರಿಯಾದ ಫೋಟೋ ಆಯ್ಕೆಮಾಡಿ.");
+        this.value = "";
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+
+        uploadedPhoto = new Image();
+
+        uploadedPhoto.onload = function() {
+            photoPreview.src = event.target.result;
+            photoPreview.style.display = "block";
+        };
+
+        uploadedPhoto.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
+});
+
+/* POSTER GENERATION */
+
+const form = document.getElementById("posterForm");
+const canvas = document.getElementById("posterCanvas");
+const ctx = canvas.getContext("2d");
+
+const generatedSection =
+    document.getElementById("generatedSection");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("personName").value.trim();
+
+    const type =
+        document.getElementById("personType").value;
+
+    const branch =
+        document.getElementById("branch").value;
+
+    if (!name || !type || !branch || !uploadedPhoto) {
+
+        alert("ದಯವಿಟ್ಟು ಎಲ್ಲಾ ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ ಮತ್ತು ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.");
+
+        return;
+    }
+
+    generatePoster(name, type, branch, uploadedPhoto);
+
+    generatedSection.style.display = "block";
+
+    generatedSection.scrollIntoView({
+        behavior: "smooth"
+    });
 
 });
 
-/* PHOTO */
+/* POSTER DESIGN */
 
-let uploadedImage=null;
-let generated=false;
+function generatePoster(name, type, branch, photo) {
 
-const photoInput=document.getElementById("photo");
+    const W = canvas.width;
+    const H = canvas.height;
 
-photoInput.addEventListener("change",function(){
+    /* BACKGROUND */
 
- const file=this.files[0];
+    const gradient = ctx.createLinearGradient(0, 0, W, H);
 
- uploadedImage=null;
- generated=false;
+    gradient.addColorStop(0, "#fff8e1");
+    gradient.addColorStop(0.5, "#fff0c2");
+    gradient.addColorStop(1, "#ffcc80");
 
- document.getElementById("posterSection").style.display="none";
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, W, H);
 
- if(!file)return;
+    /* BORDER */
 
- if(!file.type.startsWith("image/")){
-  alert("ದಯವಿಟ್ಟು ಸರಿಯಾದ ಫೋಟೋ ಆಯ್ಕೆಮಾಡಿ");
-  this.value="";
-  return;
- }
+    ctx.strokeStyle = "#c62828";
+    ctx.lineWidth = 20;
+    ctx.strokeRect(20, 20, W - 40, H - 40);
 
- if(file.size>8*1024*1024){
-  alert("8 MB ಗಿಂತ ಕಡಿಮೆ ಗಾತ್ರದ ಫೋಟೋ ಆಯ್ಕೆಮಾಡಿ");
-  this.value="";
-  return;
- }
+    ctx.strokeStyle = "#ffd700";
+    ctx.lineWidth = 7;
+    ctx.strokeRect(40, 40, W - 80, H - 80);
 
- const reader=new FileReader();
+    /* HEADER */
 
- reader.onload=function(e){
+    ctx.textAlign = "center";
 
-  const img=new Image();
+    ctx.fillStyle = "#0d47a1";
 
-  img.onload=function(){
+    ctx.font = "bold 55px Noto Sans Kannada";
 
-   uploadedImage=img;
+    ctx.fillText(
+        "ಆರ್. ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ",
+        W / 2,
+        120
+    );
 
-   document.getElementById("previewPhoto").src=e.target.result;
+    ctx.fillStyle = "#c62828";
 
-   document.getElementById("preview").hidden=false;
+    ctx.font = "bold 65px Noto Sans Kannada";
 
-  };
+    ctx.fillText(
+        "ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ",
+        W / 2,
+        230
+    );
 
-  img.src=e.target.result;
+    ctx.fillStyle = "#ff9800";
 
- };
+    ctx.font = "bold 45px Noto Sans Kannada";
 
- reader.readAsDataURL(file);
+    ctx.fillText(
+        "೨೦೨೬",
+        W / 2,
+        310
+    );
 
-});
+    /* PHOTO CIRCLE */
 
-/* CANVAS */
+    const photoX = W / 2;
+    const photoY = 500;
+    const radius = 160;
 
-const canvas=document.getElementById("posterCanvas");
-const ctx=canvas.getContext("2d");
+    ctx.save();
 
-async function loadKannadaFont(){
+    ctx.beginPath();
+    ctx.arc(photoX, photoY, radius, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.clip();
 
- if(document.fonts){
+    const scale = Math.max(
+        radius * 2 / photo.width,
+        radius * 2 / photo.height
+    );
 
-  await document.fonts.load("700 40px 'Noto Sans Kannada'");
-  await document.fonts.ready;
+    const imgW = photo.width * scale;
+    const imgH = photo.height * scale;
 
- }
+    ctx.drawImage(
+        photo,
+        photoX - imgW / 2,
+        photoY - imgH / 2,
+        imgW,
+        imgH
+    );
+
+    ctx.restore();
+
+    ctx.strokeStyle = "#c62828";
+    ctx.lineWidth = 12;
+
+    ctx.beginPath();
+    ctx.arc(photoX, photoY, radius, 0, Math.PI * 2);
+    ctx.stroke();
+
+    /* NAME BOX */
+
+    ctx.fillStyle = "#8e0000";
+
+    roundRect(
+        ctx,
+        90,
+        720,
+        900,
+        300,
+        40
+    );
+
+    ctx.fill();
+
+    ctx.strokeStyle = "#ffd700";
+    ctx.lineWidth = 8;
+    ctx.stroke();
+
+    /* NAME */
+
+    ctx.fillStyle = "#ffd700";
+
+    ctx.font = "bold 55px Noto Sans Kannada";
+
+    drawWrappedText(
+        name,
+        W / 2,
+        820,
+        820,
+        70
+    );
+
+    /* TYPE */
+
+    ctx.fillStyle = "#ffffff";
+
+    ctx.font = "bold 45px Noto Sans Kannada";
+
+    ctx.fillText(
+        type === "student" ? "ವಿದ್ಯಾರ್ಥಿ" : "ಶಿಕ್ಷಕರು",
+        W / 2,
+        920
+    );
+
+    /* BRANCH */
+
+    ctx.fillStyle = "#ffeb3b";
+
+    ctx.font = "40px Noto Sans Kannada";
+
+    drawWrappedText(
+        branch,
+        W / 2,
+        980,
+        800,
+        55
+    );
+
+    /* WISHES */
+
+    ctx.fillStyle = "#c62828";
+
+    ctx.font = "bold 60px Noto Sans Kannada";
+
+    ctx.fillText(
+        "❤️ ಕನ್ನಡವೇ ನಮ್ಮ ಹೆಮ್ಮೆ ❤️",
+        W / 2,
+        1150
+    );
+
+    ctx.fillStyle = "#8e0000";
+
+    ctx.font = "bold 45px Noto Sans Kannada";
+
+    ctx.fillText(
+        "ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಶುಭಾಶಯಗಳು",
+        W / 2,
+        1230
+    );
+
+    ctx.fillStyle = "#0d47a1";
+
+    ctx.font = "40px Noto Sans Kannada";
+
+    ctx.fillText(
+        "ನಮ್ಮ ಕನ್ನಡ • ನಮ್ಮ ಸಂಸ್ಕೃತಿ • ನಮ್ಮ ಹೆಮ್ಮೆ",
+        W / 2,
+        1320
+    );
+
+    ctx.fillStyle = "#c62828";
+
+    ctx.font = "bold 35px Noto Sans Kannada";
+
+    ctx.fillText(
+        "❤️ ಜಯ ಕರ್ನಾಟಕ ❤️",
+        W / 2,
+        1380
+    );
 
 }
 
-function centerText(text,y,size,color,weight="700"){
+/* WRAPPED TEXT */
 
- ctx.textAlign="center";
- ctx.textBaseline="middle";
- ctx.fillStyle=color;
+function drawWrappedText(text, x, y, maxWidth, lineHeight) {
 
- ctx.font=weight+" "+size+"px 'Noto Sans Kannada'";
+    const words = text.split(" ");
 
- ctx.fillText(text,canvas.width/2,y);
+    let line = "";
+    let currentY = y;
 
+    for (let i = 0; i < words.length; i++) {
+
+        const testLine = line + words[i] + " ";
+
+        if (ctx.measureText(testLine).width > maxWidth && line !== "") {
+
+            ctx.fillText(line.trim(), x, currentY);
+
+            line = words[i] + " ";
+
+            currentY += lineHeight;
+
+        } else {
+
+            line = testLine;
+
+        }
+
+    }
+
+    ctx.fillText(line.trim(), x, currentY);
 }
 
-function wrapText(text,maxWidth,fontSize){
+/* ROUNDED RECTANGLE */
 
- ctx.font="700 "+fontSize+"px 'Noto Sans Kannada'";
+function roundRect(ctx, x, y, width, height, radius) {
 
- const words=text.split(" ");
- const lines=[];
- let line="";
+    ctx.beginPath();
 
- for(const word of words){
+    ctx.moveTo(x + radius, y);
 
-  const test=line?line+" "+word:word;
+    ctx.lineTo(x + width - radius, y);
 
-  if(ctx.measureText(test).width>maxWidth&&line){
+    ctx.quadraticCurveTo(
+        x + width,
+        y,
+        x + width,
+        y + radius
+    );
 
-   lines.push(line);
-   line=word;
+    ctx.lineTo(x + width, y + height - radius);
 
-  }else{
+    ctx.quadraticCurveTo(
+        x + width,
+        y + height,
+        x + width - radius,
+        y + height
+    );
 
-   line=test;
+    ctx.lineTo(x + radius, y + height);
 
-  }
+    ctx.quadraticCurveTo(
+        x,
+        y + height,
+        x,
+        y + height - radius
+    );
 
- }
+    ctx.lineTo(x, y + radius);
 
- if(line)lines.push(line);
+    ctx.quadraticCurveTo(
+        x,
+        y,
+        x + radius,
+        y
+    );
 
- return lines;
-
+    ctx.closePath();
 }
 
-/* PHOTO ON POSTER */
+/* DOWNLOAD POSTER */
 
-function drawPhoto(img,x,y,r){
+document.getElementById("downloadBtn").addEventListener("click", function() {
 
- ctx.save();
+    const link = document.createElement("a");
 
- ctx.beginPath();
- ctx.arc(x,y,r,0,Math.PI*2);
- ctx.clip();
+    link.download = "Kannada-Rajyotsava-My-Poster.png";
 
- const scale=Math.max(
-  (r*2)/img.width,
-  (r*2)/img.height
- );
+    link.href = canvas.toDataURL("image/png");
 
- const w=img.width*scale;
- const h=img.height*scale;
-
- ctx.drawImage(img,x-w/2,y-h/2,w,h);
-
- ctx.restore();
-
- ctx.beginPath();
- ctx.arc(x,y,r,0,Math.PI*2);
-
- ctx.lineWidth=12;
- ctx.strokeStyle="#FFD700";
- ctx.stroke();
-
-}
-
-/* WAVES */
-
-function drawWave(y,amplitude,color,phase){
-
- ctx.beginPath();
- ctx.moveTo(0,y);
-
- for(let x=0;x<=canvas.width;x+=5){
-
-  const yy=y+Math.sin(x/100+phase)*amplitude;
-  ctx.lineTo(x,yy);
-
- }
-
- ctx.lineTo(canvas.width,canvas.height);
- ctx.lineTo(0,canvas.height);
- ctx.closePath();
-
- ctx.fillStyle=color;
- ctx.fill();
-
-}
-
-/* CREATE POSTER */
-
-async function createPoster(name,branch,details,img){
-
- await loadKannadaFont();
-
- const W=canvas.width;
- const H=canvas.height;
-
- const bg=ctx.createLinearGradient(0,0,W,H);
-
- bg.addColorStop(0,"#fff8df");
- bg.addColorStop(.5,"#ffffff");
- bg.addColorStop(1,"#fff0c5");
-
- ctx.fillStyle=bg;
- ctx.fillRect(0,0,W,H);
-
- ctx.strokeStyle="#d99a00";
- ctx.lineWidth=18;
- ctx.strokeRect(25,25,W-50,H-50);
-
- ctx.strokeStyle="#b00020";
- ctx.lineWidth=5;
- ctx.strokeRect(45,45,W-90,H-90);
-
- centerText(
- "ಆರ್. ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ",
- 125,42,"#12358b"
- );
-
- centerText(
- "ಕನ್ನಡ ಹಬ್ಬ · ೨೦೨೬",
- 190,38,"#b00020"
- );
-
- centerText(
- "೭೧ನೇ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ",
- 270,70,"#b00020","800"
- );
-
- centerText(
- "ಶುಭಾಶಯಗಳು",
- 350,65,"#e09b00","800"
- );
-
- drawWave(460,35,"#ffcc00",0);
- drawWave(490,30,"#d50020",2);
- drawWave(520,25,"#ffcc00",4);
-
- const cardX=100;
- const cardY=570;
- const cardW=880;
- const cardH=390;
-
- ctx.fillStyle="#8c001c";
-
- ctx.beginPath();
- ctx.roundRect(cardX,cardY,cardW,cardH,45);
- ctx.fill();
-
- ctx.strokeStyle="#FFD700";
- ctx.lineWidth=8;
- ctx.stroke();
-
- drawPhoto(img,W/2,665,100);
-
- ctx.fillStyle="#FFD700";
- ctx.font="800 48px 'Noto Sans Kannada'";
- ctx.textAlign="center";
- ctx.textBaseline="middle";
-
- const nameLines=wrapText(name,800,48);
-
- let nameY=820;
-
- nameLines.forEach(line=>{
-
-  ctx.fillText(line,W/2,nameY);
-  nameY+=58;
-
- });
-
- ctx.fillStyle="#ffffff";
- ctx.font="700 34px 'Noto Sans Kannada'";
-
- ctx.fillText(branch,W/2,nameY+15);
-
- ctx.fillStyle="#ffe7a1";
- ctx.font="600 30px 'Noto Sans Kannada'";
-
- ctx.fillText(details,W/2,nameY+70);
-
- centerText(
- "ನಿಮಗೆ ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬಕ್ಕೆ",
- 1080,36,"#8c001c"
- );
-
- centerText(
- "ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಹಾರ್ದಿಕ ಶುಭಾಶಯಗಳು",
- 1145,42,"#b00020","800"
- );
-
- centerText(
- "❤️ ಕನ್ನಡ ನಮ್ಮ ಹೆಮ್ಮೆ ❤️",
- 1220,42,"#b00020"
- );
-
- drawWave(1320,30,"#ffcc00",1);
- drawWave(1350,35,"#d50020",3);
- drawWave(1380,25,"#ffcc00",5);
-
- centerText(
- "ಕನ್ನಡವೇ ನಮ್ಮ ಉಸಿರು · ಕನ್ನಡವೇ ನಮ್ಮ ಹೆಮ್ಮೆ",
- 1430,34,"#8c001c"
- );
-
-}
-
-/* SUBMIT */
-
-document.getElementById("form").addEventListener("submit",async function(e){
-
- e.preventDefault();
-
- const name=document.getElementById("name").value.trim();
- const branch=document.getElementById("branch").value;
-
- const teacher=role.value==="teacher";
- const semester=sem.value;
-
- if(!name||!branch||(!teacher&&!semester)||!uploadedImage){
-
-  alert("ದಯವಿಟ್ಟು ಎಲ್ಲಾ ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ ಮತ್ತು ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ");
-  return;
-
- }
-
- const details=teacher?"ಅಧ್ಯಾಪಕರು":semester;
-
- try{
-
-  await createPoster(name,branch,details,uploadedImage);
-
-  generated=true;
-
-  const section=document.getElementById("posterSection");
-
-  section.style.display="block";
-
-  section.scrollIntoView({
-   behavior:"smooth",
-   block:"start"
-  });
-
- }catch(error){
-
-  console.error(error);
-
-  alert("ಪೋಸ್ಟರ್ ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.");
-
- }
-
-});
-
-/* DOWNLOAD */
-
-document.getElementById("download").addEventListener("click",function(){
-
- if(!generated){
-
-  alert("ಮೊದಲು ನಿಮ್ಮ ಪೋಸ್ಟರ್ ರಚಿಸಿ");
-  return;
-
- }
-
- const link=document.createElement("a");
-
- link.download="Kannada-Rajyotsava-2026.png";
- link.href=canvas.toDataURL("image/png");
-
- link.click();
+    link.click();
 
 });
 
