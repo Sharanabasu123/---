@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ 2026</title>
+
+<title>ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ಪೋಸ್ಟರ್</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600;700;800&display=swap');
@@ -16,8 +17,8 @@
 body {
     margin: 0;
     font-family: 'Noto Sans Kannada', sans-serif;
-    background: linear-gradient(135deg,#12051d,#240b35,#09051a);
     color: white;
+    background: linear-gradient(135deg,#18051f,#390b28,#120b35);
     overflow-x: hidden;
 }
 
@@ -25,23 +26,27 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    pointer-events: none;
     background:
-      radial-gradient(circle at 20% 20%,rgba(255,0,0,.15),transparent 30%),
-      radial-gradient(circle at 80% 70%,rgba(255,220,0,.12),transparent 30%);
-    z-index: -1;
+    radial-gradient(circle at 20% 20%,#ff000033,transparent 30%),
+    radial-gradient(circle at 80% 80%,#ffd70022,transparent 35%);
+    pointer-events: none;
 }
 
-/* BACKGROUND HEART ANIMATION */
+/* Background animation */
 
-.heart {
+.hearts {
     position: fixed;
-    bottom: -50px;
-    font-size: 22px;
-    animation: floatHeart linear infinite;
+    inset: 0;
+    overflow: hidden;
     pointer-events: none;
     z-index: 0;
-    opacity: .7;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatHeart linear infinite;
+    opacity: 0.7;
 }
 
 @keyframes floatHeart {
@@ -49,31 +54,40 @@ body::before {
         transform: translateY(0) rotate(0deg);
         opacity: 0;
     }
-    20% { opacity: .8; }
+    15% { opacity: 0.8; }
     100% {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
     }
 }
 
-/* COLLEGE HEADER */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* College header */
 
 .college-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    padding: 25px;
-    background: linear-gradient(135deg,#fff8dc,#ffffff,#fff4c5);
-    border-bottom: 5px solid #e8a800;
     text-align: center;
-    position: relative;
-    z-index: 2;
+    background: linear-gradient(135deg,#fff4d2,#ffe9a5);
+    color: #8b0000;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 25px #ffd70055;
 }
 
-.college-logo {
-    width: 125px;
-    height: 125px;
+.college-header img {
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 
@@ -82,203 +96,276 @@ body::before {
 }
 
 .college-title h1 {
-    font-size: 34px;
-    font-weight: 900;
-    color: #003399;
-    margin: 0;
+    font-size: clamp(20px,4vw,35px);
+    color: #071b91;
+    margin: 5px 0;
+    font-weight: 800;
 }
 
 .college-title h2 {
-    color: #b40000;
-    font-size: 24px;
-    margin: 8px 0;
+    font-size: clamp(14px,2.5vw,22px);
+    margin: 5px 0;
+    color: #b30000;
 }
 
 .college-title p {
-    color: #222;
-    font-weight: bold;
     margin: 5px;
+    font-weight: 700;
 }
 
-/* MAIN */
+/* Form */
 
-.container {
-    width: 95%;
-    max-width: 1100px;
-    margin: 35px auto;
-    position: relative;
-    z-index: 1;
-}
-
-.section {
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,215,0,.3);
-    backdrop-filter: blur(12px);
-    border-radius: 20px;
+.form-section {
+    margin-top: 25px;
     padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 25px rgba(255,0,0,.08);
+    border-radius: 20px;
+    background: #ffffff10;
+    border: 1px solid #ffd70055;
+    backdrop-filter: blur(10px);
 }
 
-.heading {
+.form-section h2 {
     text-align: center;
     color: #ffd700;
-    font-size: 28px;
-    margin-bottom: 25px;
-    animation: glow 2s infinite alternate;
 }
-
-@keyframes glow {
-    from { text-shadow: 0 0 5px #ff0000; }
-    to { text-shadow: 0 0 20px #ffd700; }
-}
-
-/* FORM */
 
 label {
     display: block;
-    margin: 18px 0 8px;
+    margin: 15px 0 7px;
     font-weight: 700;
-    color: #ffe680;
+    color: #ffe58a;
 }
 
 input, select {
     width: 100%;
     padding: 14px;
     border-radius: 10px;
-    border: 2px solid #ffd700;
-    background: #fff;
-    color: #111;
+    border: 2px solid #ffcc00;
+    background: #fff8e7;
+    color: #500000;
     font-family: inherit;
     font-size: 16px;
 }
 
 input:focus, select:focus {
-    outline: 3px solid rgba(255,215,0,.3);
-}
-
-option {
-    color: #111;
-    background: #fff;
+    outline: 3px solid #ff5252;
 }
 
 button {
     width: 100%;
-    padding: 15px;
-    margin-top: 25px;
+    margin-top: 20px;
+    padding: 16px;
     border: none;
     border-radius: 12px;
-    font-family: inherit;
+    background: linear-gradient(90deg,#ffdf00,#ff9800);
+    color: #750000;
     font-size: 18px;
     font-weight: 800;
+    font-family: inherit;
     cursor: pointer;
-    background: linear-gradient(90deg,#ffcc00,#ff6600);
-    color: #240000;
     transition: .3s;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(255,215,0,.5);
+    transform: scale(1.02);
+    box-shadow: 0 0 20px #ffd70088;
 }
 
-.photo-preview {
-    display: block;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #ffd700;
-    margin: 20px auto;
-    display: none;
-}
-
-/* GENERATED POSTER */
+/* Generated poster */
 
 #generatedSection {
     display: none;
+    margin-top: 35px;
     text-align: center;
+    animation: fadeIn 1s ease;
 }
 
-#posterCanvas {
-    width: 100%;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.poster {
     max-width: 650px;
-    height: auto;
-    border-radius: 15px;
-    border: 3px solid #ffd700;
-    box-shadow: 0 0 30px rgba(255,215,0,.3);
-    background: white;
+    width: 100%;
+    margin: auto;
+    background: linear-gradient(#fff8e5,#ffe9bd);
+    border: 7px solid #d90000;
+    outline: 3px solid #ffd700;
+    border-radius: 12px;
+    padding: 25px;
+    color: #720000;
+    box-shadow: 0 0 30px #ffcc0055;
+    position: relative;
+    overflow: hidden;
 }
 
-/* VOICE MESSAGE */
+.poster-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.poster-top img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.poster-heading {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 800;
+    color: #071b91;
+}
+
+.poster h1 {
+    color: #d00000;
+    font-size: clamp(25px,5vw,42px);
+    margin: 20px 0 5px;
+}
+
+.poster .year {
+    font-size: 25px;
+    color: #d28a00;
+    font-weight: 800;
+}
+
+.photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #d90000;
+    margin: 20px auto;
+    display: block;
+}
+
+.student-box {
+    background: linear-gradient(135deg,#b80000,#760000);
+    color: #ffe477;
+    border: 3px solid #ffcc00;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.student-box h2 {
+    margin: 5px;
+    font-size: clamp(18px,4vw,28px);
+    overflow-wrap: anywhere;
+}
+
+.student-box p {
+    color: white;
+    margin: 10px 0;
+}
+
+.poster-message {
+    font-size: 20px;
+    font-weight: 800;
+    color: #d00000;
+    margin: 20px 0;
+}
+
+.poster-footer {
+    background: #8b0000;
+    color: #ffdf00;
+    border-radius: 30px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.poster-bottom {
+    margin-top: 20px;
+    border-top: 3px solid #d90000;
+    padding-top: 15px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.download-btn {
+    background: linear-gradient(90deg,#00c853,#00a844);
+    color: white;
+}
+
+/* Voice */
 
 .voice-section {
+    margin: 35px auto;
+    padding: 25px;
+    max-width: 800px;
+    background: linear-gradient(135deg,#520000,#25002c);
+    border: 2px solid #ffd700;
+    border-radius: 20px;
     text-align: center;
+    box-shadow: 0 0 25px #ffcc0033;
+}
+
+.voice-section h2 {
+    color: #ffdf00;
+}
+
+.voice-section p {
+    color: #ffe9bd;
 }
 
 audio {
     width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
+    max-width: 550px;
+    margin-top: 15px;
 }
 
-/* ORIGINAL POSTER */
-
-.original-poster-section {
-    text-align: center;
-    margin-top: 40px;
-}
+/* Original poster */
 
 .original-poster {
-    display: block;
-    width: 100%;
-    max-width: 750px;
-    height: auto;
-    margin: 25px auto;
-    border-radius: 15px;
-    border: 3px solid #ffd700;
-    box-shadow: 0 0 25px rgba(255,215,0,.3);
+    margin-top: 30px;
+    text-align: center;
 }
 
-/* FOOTER */
-
-footer {
-    text-align: center;
-    padding: 25px;
+.original-poster h2 {
     color: #ffd700;
 }
 
-/* MOBILE */
+.original-poster img {
+    width: 100%;
+    max-width: 650px;
+    border-radius: 15px;
+    border: 4px solid #ffd700;
+    box-shadow: 0 0 25px #ffcc0055;
+}
 
-@media(max-width:650px) {
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    color: #ffdf00;
+}
+
+@media(max-width:600px) {
     .college-header {
+        flex-direction: column;
+    }
+
+    .college-header img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .poster {
         padding: 12px;
-        gap: 6px;
     }
 
-    .college-logo {
-        width: 60px;
-        height: 60px;
+    .poster-top img {
+        width: 45px;
+        height: 45px;
     }
 
-    .college-title h1 {
-        font-size: 15px;
-    }
-
-    .college-title h2 {
-        font-size: 12px;
-    }
-
-    .college-title p {
-        font-size: 10px;
-    }
-
-    .heading {
-        font-size: 21px;
-    }
-
-    .section {
-        padding: 15px;
+    .poster-heading {
+        font-size: 13px;
     }
 }
 </style>
@@ -286,46 +373,274 @@ footer {
 
 <body>
 
-<!-- ANIMATED HEARTS -->
-<div id="hearts"></div>
-
-<!-- COLLEGE HEADER -->
-<header class="college-header">
-
-    <img src="silver-jubilee.png"
-         class="college-logo"
-         alt="Silver Jubilee">
-
-    <div class="college-title">
-        <h1>R.L. JALAPPA INSTITUTE OF TECHNOLOGY</h1>
-        <h2>ಆರ್.ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ</h2>
-        <p>ದೊಡ್ಡಬಳ್ಳಾಪುರ | ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ</p>
-    </div>
-
-    <img src="100-years.png"
-         class="college-logo"
-         alt="100 Years">
-
-</header>
+<!-- Animated background -->
+<div class="hearts" id="hearts"></div>
 
 <div class="container">
 
-<!-- WELCOME -->
-<section class="section">
-    <h1 class="heading">
-        ❤️ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ 2026 💛
-    </h1>
+<!-- College header -->
+<header class="college-header">
 
-    <h2 style="text-align:center;color:white;">
-        ನನ್ನ ಕನ್ನಡ · ನನ್ನ ಹೆಮ್ಮೆ
-    </h2>
+    <!-- LEFT SILVER JUBILEE LOGO -->
+    <img src="silver-jubilee.png" alt="Silver Jubilee Logo">
 
-    <p style="text-align:center;">
-        ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ವಿಶೇಷ ಶುಭಾಶಯಗಳ ಪೋಸ್ಟರ್ ರಚಿಸಿಕೊಳ್ಳಿ ❤️💛
-    </p>
+    <div class="college-title">
+        <h1>ಆರ್.ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ</h1>
+        <h2>ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ೨೦೨೬</h2>
+        <p>ಕನ್ನಡವೇ ನಮ್ಮ ಉಸಿರು ❤️💛</p>
+    </div>
+
+    <!-- RIGHT COLLEGE LOGO -->
+    <img src="college-logo.png" alt="College Logo">
+
+</header>
+
+<!-- Form -->
+<section class="form-section">
+
+    <h2>🎉 ನಿಮ್ಮ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ಪೋಸ್ಟರ್ ರಚಿಸಿ 🎉</h2>
+
+    <label for="studentName">ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು</label>
+    <input type="text" id="studentName"
+           placeholder="ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ">
+
+    <label for="department">ವಿಭಾಗ / ಕೋರ್ಸ್</label>
+    <select id="department">
+        <option value="ಕಂಪ್ಯೂಟರ್ ಸೈನ್ಸ್ (CSE)">ಕಂಪ್ಯೂಟರ್ ಸೈನ್ಸ್ (CSE)</option>
+        <option value="ಇನ್ಫರ್ಮೇಷನ್ ಸೈನ್ಸ್ (ISE)">ಇನ್ಫರ್ಮೇಷನ್ ಸೈನ್ಸ್ (ISE)</option>
+        <option value="ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್ (ECE)">ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್ (ECE)</option>
+        <option value="ಮೆಕ್ಯಾನಿಕಲ್ (ME)">ಮೆಕ್ಯಾನಿಕಲ್ (ME)</option>
+        <option value="ಸಿವಿಲ್ (CE)">ಸಿವಿಲ್ (CE)</option>
+        <option value="ಎಲೆಕ್ಟ್ರಿಕಲ್ (EEE)">ಎಲೆಕ್ಟ್ರಿಕಲ್ (EEE)</option>
+    </select>
+
+    <label for="studentPhoto">ನಿಮ್ಮ ಫೋಟೋ ಆಯ್ಕೆಮಾಡಿ</label>
+    <input type="file" id="studentPhoto" accept="image/*">
+
+    <button onclick="createPoster()">🎊 ನನ್ನ ಪೋಸ್ಟರ್ ರಚಿಸಿ 🎊</button>
+
 </section>
 
-<!-- FORM -->
-<section class="section">
+<!-- Generated poster: hidden until button click -->
+<section id="generatedSection">
 
-    <h2 class="heading">✨ ನಿಮ್ಮ ಪೋಸ್ಟರ್ ರಚಿಸಿಕೊಳ್ಳಿ ✨</
+    <h2 style="color:#ffd700">🎉 ನಿಮ್ಮ ಪೋಸ್ಟರ್ ಸಿದ್ಧವಾಗಿದೆ 🎉</h2>
+
+    <div class="poster" id="poster">
+
+        <div class="poster-top">
+            <img src="silver-jubilee.png" alt="Silver Jubilee">
+
+            <div class="poster-heading">
+                ಆರ್.ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ
+                <br>
+                ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ೨೦೨೬
+            </div>
+
+            <img src="college-logo.png" alt="College Logo">
+        </div>
+
+        <h1>ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ</h1>
+        <div class="year">೨೦೨೬</div>
+
+        <img id="posterPhoto" class="photo" alt="Student Photo">
+
+        <div class="student-box">
+            <h2 id="posterName"></h2>
+            <p>ವಿದ್ಯಾರ್ಥಿ</p>
+            <p id="posterDepartment"></p>
+        </div>
+
+        <div class="poster-message">
+            ❤️ ಕನ್ನಡವೇ ನಮ್ಮ ಹೆಮ್ಮೆ ❤️
+            <br>
+            ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಶುಭಾಶಯಗಳು
+        </div>
+
+        <div class="poster-footer">
+            ನಾಡ ಭಕ್ತಿ • ಕನ್ನಡ ಪ್ರೀತಿ • ಕನ್ನಡ ಹೆಮ್ಮೆ
+            <br>
+            ❤️ ಕನ್ನಡ ❤️
+        </div>
+
+        <div class="poster-bottom">
+            📅 ದಿನಾಂಕ: ೧೧.೧೧.೨೦೨೬
+            <br>
+            📍 ಆರ್.ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ
+            <br>
+            ದೊಡ್ಡಬಳ್ಳಾಪುರ
+        </div>
+
+    </div>
+
+    <button class="download-btn" onclick="downloadPoster()">
+        📥 ಪೋಸ್ಟರ್ ಉಳಿಸಿ
+    </button>
+
+</section>
+
+<!-- Voice message BELOW generated poster -->
+<section class="voice-section">
+
+    <h2>🎵 ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಧ್ವನಿ ಸಂದೇಶ 🎵</h2>
+
+    <p>
+        ನಮ್ಮ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ವಿಶೇಷ ಧ್ವನಿ ಸಂದೇಶವನ್ನು ಆಲಿಸಿ
+        ❤️💛
+    </p>
+
+    <audio controls>
+        <source src="audio/rajyotsava.mp3" type="audio/mpeg">
+        ನಿಮ್ಮ ಬ್ರೌಸರ್ ಆಡಿಯೋ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.
+    </audio>
+
+</section>
+
+<!-- Original poster BELOW voice -->
+<section class="original-poster">
+
+    <h2>❤️ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಮೂಲ ಪೋಸ್ಟರ್ ❤️</h2>
+
+    <img src="poster.png" alt="ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಮೂಲ ಪೋಸ್ಟರ್">
+
+</section>
+
+<footer>
+    ❤️ ಕನ್ನಡವೇ ನಮ್ಮ ಉಸಿರು ❤️
+    <br>
+    ಆರ್.ಎಲ್. ಜಾಲಪ್ಪ ತಾಂತ್ರಿಕ ಮಹಾವಿದ್ಯಾಲಯ
+    <br>
+    ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ ೨೦೨೬
+</footer>
+
+</div>
+
+<script>
+
+/* Background hearts animation */
+
+const heartsContainer = document.getElementById("hearts");
+
+const heartSymbols = ["❤️","💛","♥️","💖","💛"];
+
+for(let i=0;i<35;i++){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        heartSymbols[Math.floor(Math.random()*heartSymbols.length)];
+
+    heart.style.left = Math.random()*100+"%";
+
+    heart.style.fontSize = (15+Math.random()*25)+"px";
+
+    heart.style.animationDuration =
+        (8+Math.random()*12)+"s";
+
+    heart.style.animationDelay =
+        Math.random()*10+"s";
+
+    heartsContainer.appendChild(heart);
+}
+
+/* Create poster */
+
+let selectedPhoto = "";
+
+document.getElementById("studentPhoto")
+.addEventListener("change",function(event){
+
+    const file = event.target.files[0];
+
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            selectedPhoto = e.target.result;
+
+        };
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
+
+function createPoster(){
+
+    const name =
+        document.getElementById("studentName").value.trim();
+
+    const department =
+        document.getElementById("department").value;
+
+    if(!name){
+
+        alert("ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ!");
+
+        return;
+
+    }
+
+    if(!selectedPhoto){
+
+        alert("ದಯವಿಟ್ಟು ನಿಮ್ಮ ಫೋಟೋ ಆಯ್ಕೆಮಾಡಿ!");
+
+        return;
+
+    }
+
+    document.getElementById("posterName").textContent =
+        name;
+
+    document.getElementById("posterDepartment").textContent =
+        department;
+
+    document.getElementById("posterPhoto").src =
+        selectedPhoto;
+
+    const generatedSection =
+        document.getElementById("generatedSection");
+
+    generatedSection.style.display = "block";
+
+    generatedSection.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+}
+
+/* Download poster */
+
+function downloadPoster(){
+
+    const poster = document.getElementById("poster");
+
+    const name =
+        document.getElementById("studentName").value.trim();
+
+    if(!poster){
+
+        alert("ಮೊದಲು ಪೋಸ್ಟರ್ ರಚಿಸಿ!");
+
+        return;
+
+    }
+
+    alert(
+        "ಪೋಸ್ಟರ್ ಉಳಿಸಲು ಬ್ರೌಸರ್‌ನ Screenshot ಅಥವಾ Print ಆಯ್ಕೆಯನ್ನು ಬಳಸಿ."
+    );
+
+    window.print();
+
+}
+
+</script>
+
+</body>
+</html>
